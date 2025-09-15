@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex justify-center items-center">
+
+  <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 rounded-2xl shadow-md p-6">
+    <h2 class="text-2xl font-bold text-center mb-4">Select Payment Method</h2>
+    <p class="text-lg font-semibold text-center mb-6">
+      Total Amount: <span class="text-green-600">₹<span id="totalAmount">0</span></span>
+    </p>
+
+    <!-- Tabs -->
+    <div class="flex justify-around border-b mb-6">
+      <button class="tab active px-4 py-2 font-medium text-blue-600 border-b-2 border-blue-600" onclick="showTab('upi', event)">UPI</button>
+      <button class="tab px-4 py-2 font-medium text-gray-600 hover:text-blue-600" onclick="showTab('netbanking', event)">Net Banking</button>
+      <button class="tab px-4 py-2 font-medium text-gray-600 hover:text-blue-600" onclick="showTab('card', event)">Card</button>
+      <button class="tab px-4 py-2 font-medium text-gray-600 hover:text-blue-600" onclick="showTab('cod', event)">Cash on Delivery</button>
+    </div>
+
+    <!-- UPI -->
+    <div id="upi" class="tab-content">
+      <label class="font-medium">Select UPI App:</label>
+      <div class="flex gap-4 my-3">
+        <img src="images/gpay logo.png" class="w-12" alt="Google Pay">
+        <img src="images/phonepe.svg" class="w-20" alt="PhonePe">
+        <img src="images/paytm.png" class="w-14" alt="Paytm">
+      </div>
+      <select class="border rounded-lg p-2 w-full mb-3">
+        <option>Google Pay</option>
+        <option>PhonePe</option>
+        <option>Paytm</option>
+      </select>
+      <input type="text" placeholder="Enter UPI ID" class="border rounded-lg p-2 w-full">
+    </div>
+
+    <!-- Net Banking -->
+    <div id="netbanking" class="tab-content hidden">
+      <label class="font-medium">Choose Bank:</label>
+      <select class="border rounded-lg p-2 w-full">
+        <option>HDFC</option>
+        <option>SBI</option>
+        <option>ICICI</option>
+      </select>
+    </div>
+
+    <!-- Card -->
+    <div id="card" class="tab-content hidden">
+      <label class="font-medium">Card Number:</label>
+      <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX" class="border rounded-lg p-2 w-full">
+    </div>
+
+    <!-- COD -->
+    <div id="cod" class="tab-content hidden">
+      <p class="text-gray-600">Cash on Delivery is available for selected locations.</p>
+    </div>
+
+    <!-- Pay Button -->
+    <button id="payButton" onclick="message()" class="mt-6 w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl font-semibold text-lg">
+      Proceed to Pay
+    </button>
+  </div>
+
+  <script>
+    function showTab(tab, event) {
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+      document.querySelectorAll('.tab').forEach(tabEl => {
+        tabEl.classList.remove('text-blue-600', 'border-blue-600');
+        tabEl.classList.add('text-gray-600');
+      });
+
+      document.getElementById(tab).classList.remove('hidden');
+      event.currentTarget.classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
+    }
+
+    let totalAmount = localStorage.getItem('totalAmount') || 0;
+    document.getElementById('totalAmount').innerText = totalAmount;
+    document.getElementById('payButton').innerText = `Proceed to Pay ₹${totalAmount}`;
+
+    function message() {
+      alert("Order Placed Successfully!");
+      localStorage.removeItem('cart');
+      localStorage.removeItem('totalAmount');
+      window.location.href = "home.html";
+    }
+  </script>
+</body>
+</html>

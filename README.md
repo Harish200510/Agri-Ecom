@@ -2,7 +2,7 @@
 
 AgriMart is a full-stack agriculture e-commerce web application that connects farmers and consumers. Users can browse products, add them to cart, sell products, and proceed to checkout with multiple payment options.
 
-This project is built using **Node.js, Express.js, MongoDB, Cloudinary**, and **vanilla HTML/CSS/JavaScript**.
+This project is built using **Node.js, Express.js, MongoDB, Cloudinary**, and **HTML,CSS,JavaScript,Bootstrap**.
 
 ---
 

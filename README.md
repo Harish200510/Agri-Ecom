@@ -65,7 +65,5 @@ This project is built using **Node.js, Express.js, MongoDB, Cloudinary**, and **
 ### 💳 Payment Page
 ![Payment](ScreenShots/payment.png)
 
----
 
-## 📂 Project Structure
 

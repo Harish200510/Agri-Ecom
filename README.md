@@ -51,19 +51,19 @@ This project is built using **Node.js, Express.js, MongoDB, Cloudinary**, and **
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Page](screenshots/home.png)
+![Home Page](ScreenShots/home.png)
 
 ### 🥕 Product Listing
-![Products](screenshots/products.png)
+![Products](ScreenShots/products.png)
 
 ### ➕ Sell Product
-![Sell Product](screenshots/sell.png)
+![Sell Product](ScreenShots/sell.png)
 
 ### 🛒 Cart Page
-![Cart](screenshots/cart.png)
+![Cart](ScreenShots/cart.png)
 
 ### 💳 Payment Page
-![Payment](screenshots/payment.png)
+![Payment](ScreenShots/payment.png)
 
 ---
 
